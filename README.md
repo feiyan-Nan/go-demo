@@ -22,7 +22,7 @@
 
 ```cgo
 strconv.Itoa() 把整型转化为字符串
-strconv.Atoi
+strconv.Atoi() 把字符串转化为整型
 ```
 
 unit8 == byte
@@ -42,6 +42,7 @@ s := "a明天会更改好"
 // new(类型) 返回一个指向类型的指针
 ```
 
+三大引用类型: slice map channel 都是引用类型
 
 for{} 表示一个死循环 可以通过break跳出循环
 

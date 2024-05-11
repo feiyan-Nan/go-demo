@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 )
 
 const repeatCount = 3
@@ -12,15 +13,67 @@ const spanishHelloPrefix = "spanish"
 
 type User struct {
 	Name string
-	Age  int
 }
 
-type Paper struct {
-	Title string
-	User  *User
+// 结构体的方法
+func (u User) hello(man string) string {
+	return fmt.Sprintf("Hello %s, my name is %s", man, u.Name)
+}
+
+func (u User) say() {
+
+}
+
+type UserMap map[string]User
+
+type Employee struct {
+	Name string `json:"name1"`
+	Age  int    `json:"age"`
+	City string `json:"city"`
+}
+
+type MetadataTenant string
+
+type AA struct {
+	Name string
+	string
+	int
+}
+
+func NewAA(name string, string string, int int) *AA {
+	return &AA{Name: name, string: string, int: int}
 }
 
 func main() {
+
+	callback := func(a int, b int) int {
+		return a + b
+	}
+	println(sums(callback, 1, 2, 3, 4, 5))
+	//user := []User{{Name: "zhangsan"}}
+	//update_user(user)
+	//println(user)
+	//fmt.Println(user)
+	//println(add(1, 2))
+	//a := NewAA("南飞雁", "123", 456)
+	//a.Name = "南飞雁1"
+	//println(a.string)
+	//emp1 := Employee{"Sam", 25, "New York"}
+	//empJson, _ := json.Marshal(emp1)
+	//fmt.Println(string(empJson))
+	//
+	//var emp2 Employee
+	//json.Unmarshal(empJson, &emp2)
+	//fmt.Println(emp2)
+
+	//user := User{
+	//	Name: "南飞雁",
+	//	Age:  18,
+	//	HH:   20,
+	//}
+	//println(user.hello("12"))
+	//println(MetadataTenant("aa"))
+
 	//arr := []int{1, 2, 3}
 	//for i := 0; i < len(arr); i++ {
 	//	println(arr[i])
@@ -42,64 +95,90 @@ func main() {
 	//	break
 	//}
 
-	if_goto()
-
-	//ch := make(chan int, 10)
-	//for i := 0; i < 10; i++ {
-	//	ch <- rand.Intn(100)
+	//if_goto()
+	//sli := genSlice(100)
+	//mm := map[int]int{}
+	//mmq := make(map[int]bool, len(sli))
+	//for _, i2 := range sli {
+	//	mmq[i2] = true
 	//}
-	//close(ch)
-	//for i := range ch {
-	//	println(i)
-	//}
+	//println(len(mmq))
 
-	//for val := range ch {
-	//	println(val)
+	//sb := strings.Builder{}
+	//for _, val := range sli {
+	//	sb.WriteString(strconv.Itoa(val) + ", ")
 	//}
-	//fmt.Println(<-ch)
-	//fmt.Println(<-ch)
-	//fmt.Println(<-ch)
-	//fmt.Println(<-ch)
-	//fmt.Println(<-ch)
-	//fmt.Println(<-ch)
-	//fmt.Println(<-ch)
+	//println(strings.TrimRight(sb.String(), ", "))
+}
 
-	//do(10)
-	//do("Hello, World!") // 输出：This is a string value
-	//do(true)            // 输出：This is a bool value
-	//paper := new(Paper)
-	//paper.Title = "Go语言"
-	//paper.User = &User{
-	//	Name: "张三",
-	//	Age:  18,
-	//}
-	//color := "green"
-	//println(time.Now().Month())
-	//switch color {
-	//case "red":
-	//	println("red")
-	//	fallthrough
-	//case "green":
-	//	println("green")
-	//	fallthrough
-	//case "yellow":
-	//	println("yellow")
-	//default:
-	//	println("other")
-	//}
+func update_user(user []User) {
+	user[0].Name = "南飞雁"
+}
 
-	//var a int = 10
-	//a := 10
-	//b := 20
-	//c := 30
-	//d := 40
-	//e := 50
-	//f := 60
-	//g := 70
-	//h := 80
-	//i := 90
-	//j := 100
+//ch := make(chan int, 10)
+//for i := 0; i < 10; i++ {
+//	ch <- rand.Intn(100)
+//}
+//close(ch)
+//for i := range ch {
+//	println(i)
+//}
 
+//for val := range ch {
+//	println(val)
+//}
+//fmt.Println(<-ch)
+//fmt.Println(<-ch)
+//fmt.Println(<-ch)
+//fmt.Println(<-ch)
+//fmt.Println(<-ch)
+//fmt.Println(<-ch)
+//fmt.Println(<-ch)
+
+//do(10)
+//do("Hello, World!") // 输出：This is a string value
+//do(true)            // 输出：This is a bool value
+//paper := new(Paper)
+//paper.Title = "Go语言"
+//paper.User = &User{
+//	Name: "张三",
+//	Age:  18,
+//}
+//color := "green"
+//println(time.Now().Month())
+//switch color {
+//case "red":
+//	println("red")
+//	fallthrough
+//case "green":
+//	println("green")
+//	fallthrough
+//case "yellow":
+//	println("yellow")
+//default:
+//	println("other")
+//}
+
+//var a int = 10
+//a := 10
+//b := 20
+//c := 30
+//d := 40
+//e := 50
+//f := 60
+//g := 70
+//h := 80
+//i := 90
+//j := 100
+
+//}
+
+func genSlice(n int) []int {
+	s := make([]int, 0, 10)
+	for i := 0; i < n; i++ {
+		s = append(s, rand.Intn(100))
+	}
+	return s
 }
 
 func if_goto() {
