@@ -46,6 +46,7 @@ s := "a明天会更改好"
 
 for{} 表示一个死循环 可以通过break跳出循环
 
+后面加`三个点`表示显示的转化为切片
 
 
 Go里面 switch 默认相当于每个case最后带有break，匹配成功后不会自动向下执行其他case，而是跳出整个switch, 但是可以使用fallthrough强制执行后面的case代码。
